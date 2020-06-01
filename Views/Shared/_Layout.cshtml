@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <!-- 3. Se agregan carpetas content (con archivos Bootstrap y jQuery), carpetas Controllers, Models, Views-->
+    <!-- 4. En Views, en la carpeta Shared, se agrega el archivo _Layout.cshtml y se agrega el siguiente código en <head>-->
+    <script src="~/Content/jQuery/jquery-3.5.1.min.js"></script>
+    <script src="~/Content/Bootstrap/js/bootstrap.js"></script>
+    <script src="~/Content/Bootstrap/js/bootstrap.bundle.js"></script>
+    <link href="~/Content/Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <hr/>
+    <footer>
+        <p>&copy; 2020 - CoreBB</p>
+    </footer>
+</body>
+</html>

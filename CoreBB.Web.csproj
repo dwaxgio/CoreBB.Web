@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="wwwroot\Content\Bootstrap\" />
+    <Folder Include="wwwroot\Content\jQuery\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+  </ItemGroup>
+  
+  <!-- 9. Se agrega el siguiente código para iniciar con la configuracion de EF-->
+  <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.Dotnet" Version="3.1"/>
+</Project>
