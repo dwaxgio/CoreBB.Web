@@ -1,0 +1,20 @@
+﻿<!-- 19. Al realizar click derecho en el método Index() del controlador HomeController, se genera nueva vista, se crea
+    // automáticamente la carpeta Error en Views, y se agrega manualmente el siguiente código
+    Nota: Se puede usar tanto ViewData Como ViewBag(se simplifica)
+    -   ViewData["Persona"] = new Persona("Alice")
+    ó - ViewBag.Persona = new Persona("Alice")
+    -->
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<h2>HTTP @ViewBag.StatusCode Error</h2>
+<p>
+    <strong class="alert-warning">@ViewBag.Message</strong>
+</p>
+<hr/>
+<h5>Información de debug: </h5>
+<p>
+    @ViewBag.StackTrace
+</p>

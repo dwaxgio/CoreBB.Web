@@ -11,7 +11,11 @@ namespace CoreBB.Web.Controllers
     {
         public IActionResult Index()
         {
+                        
             return View();
+
+            /*Para prueba de error, se genera falso error:*/
+            //throw new Exception("Fake Error");
         }
     }
 }

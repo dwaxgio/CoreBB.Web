@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoreBB.Web.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -24,16 +25,19 @@ namespace CoreBB.Web
                 .AddCookie(option =>
                 {
                     option.LoginPath = "/User/LogIn"; // Ruta de logueo por defecto
-                    option.AccessDeniedPath = "/Error/AccessDenied"; // Ruta para accesos no autorizados
+                    option.AccessDeniedPath = "/Error/AccessDenied"; // Ruta para accesos no autorizados,  
                     option.Cookie.SecurePolicy = CookieSecurePolicy.Always;
                 });
+
+            // 13. Se agrega el siguiente código, para aplicar la configuración de la cadena de conexión
+            services.AddDbContext<CoreBBContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             // 2. se agrega el siguiente código
-            app.UseExceptionHandler("/Error/Index"); // Ruta para manejar errores
+            app.UseExceptionHandler("/Error/Index"); // Ruta para manejar errores // se usa la acion del Index en ErrorController, para gestionar excepciones
             app.UseStaticFiles();
             app.UseAuthentication();
             app.UseMvcWithDefaultRoute();            
