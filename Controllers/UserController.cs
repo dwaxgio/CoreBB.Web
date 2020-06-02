@@ -224,5 +224,13 @@ namespace CoreBB.Web.Controllers
 
             return RedirectToAction("Detail", new { name = user.Name });
         }
+
+        // 35. Listar todos los usuarios
+        [HttpGet, Authorize(Roles = Roles.Administrator)]
+        public IActionResult Index()
+        {
+            var users = _dbContext.User.ToList();
+            return View(users);
+        }
     }
 }
